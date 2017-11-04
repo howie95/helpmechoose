@@ -1,0 +1,25 @@
+<view class="container">
+  <view class='content'>
+    <text class="intro {{intro == true?'intro1':''}}">选一个</text>
+    <view class='roll'>
+      <text wx:if='{{!list.length}}' class="intro {{intro == true?'intro2':''}} {{holding == true?'fadeout':''}}">点击加号添加让你选择困难的事项\n我来帮你痛快了结</text>
+      <view class="intro coin {{intro == true?'intro3':''}} {{finish == true?'finish':''}}">
+        <view class='list'>
+          <view class="{{remove==true&&result-1!==index?'remove':''}}" wx:for="{{list}}">
+            <text>{{index+1}}.</text>
+            <input wx:if="{{!item.text}}" maxlength='20' focus='true' confirm-type='添加' data-index='{{index}}' bindconfirm='confirmthis'></input>
+            <text>{{item.text}}</text>
+          </view>
+        </view>
+        <view wx:if="{{!typing&&!finish}}" class='listbtns'>
+          <view wx:if="{{list.length<5}}" class='btn' bindtap='add'><text>+</text></view>
+          <view wx:if="{{list.length>1}}" class='btn' bindtap='finish'><text>✓</text></view>
+        </view>
+        <text wx:if="{{typing}}">确认输入的内容之后才能继续添加</text>
+      </view>
+      <text wx:if='{{finish}}' class="tips">如果点击重新选择的话\n前次选择的结果将被自动排除</text>
+      <text wx:if='{{finish}}' class="replay" bindtap='replay'>重新选</text>
+    </view>
+    <text class="intro button {{intro == true?'intro3':''}}" bindtap='back'>返回</text>
+  </view>
+</view>

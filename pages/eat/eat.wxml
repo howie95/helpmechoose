@@ -1,0 +1,21 @@
+<view class="container">
+  <view class='content' bindtouchstart='start' bindtouchend='end'>
+    <text class="intro {{intro == true?'intro1':''}}">吃什么</text>
+    <view class='roll'>
+      <text wx:if='{{!finish}}' class="intro {{intro == true?'intro2':''}} {{holding == true?'fadeout':''}}">当你在美食城、小吃街变成困兽时\n不要烦心，按住屏幕三秒钟\n让我给你推荐</text>
+      <view class="suggests {{finish == true?'fadein':''}}">
+        <text>我觉得在你{{direction}}</text>
+        <text>{{side}}手边的第{{num}}家店</text>
+        <text>今天和你比较搭哦</text>
+      </view>
+      <view wx:if='{{holding}}' class="bgbars {{holding == true?'hold':''}} {{finish == true?'fadeout':''}}">
+          <view class="bar1"></view>
+          <view class="bar2"></view>
+          <view class="bar3"></view>
+      </view>
+      <text wx:if='{{finish}}' class="tips">把喜欢的店记在备忘录里\n下次用 选一个 来解决问题吧</text>
+      <text wx:if='{{finish}}' class="replay" bindtap='replay'>再试一次</text>
+    </view>
+    <text class="intro button {{intro == true?'intro3':''}}" bindtap='back'>返回</text>
+  </view>
+</view>

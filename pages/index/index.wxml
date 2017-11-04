@@ -1,0 +1,10 @@
+<view class="container">
+  <view class='content'>
+    <text>帮我做决定！</text>
+    <text class='button' data-link='roll' bindtap='navto'>投硬币</text>
+    <text class='button' data-link='eat' bindtap='navto'>吃什么</text>
+    <text class='button' data-link='which' bindtap='navto'>选一个</text>
+    <text class='button' data-link='answer' bindtap='navto'>答案之书</text>
+    <text class='share'>如果有帮到你，请点右上角分享给朋友哦 ;)</text>
+  </view>
+</view>

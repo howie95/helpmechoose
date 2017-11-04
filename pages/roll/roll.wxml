@@ -1,0 +1,17 @@
+<view class="container">
+  <view class='content' bindtouchstart='start' bindtouchend='end'>
+    <text class="intro {{intro == true?'intro1':''}}">投硬币</text>
+    <view class='roll'>
+      <text wx:if='{{!finish}}' class="intro {{intro == true?'intro2':''}} {{holding == true?'fadeout':''}}">在心中默念你纠结的问题\n然后按住屏幕三秒钟\n我就可以给你答案</text>
+      <view class="coin {{holding == true?'fadein':'fadeout'}} {{finish == true?'transform':''}}">
+        <image wx:if='{{holding}}' src='./coin.svg'></image>
+        <view class="coininside {{finish == true?'fadein':''}}">
+          <text class="{{finish == true?'fadein':''}}">{{result}}</text>
+        </view>
+      </view>
+      <text wx:if='{{finish}}' class="tips">当一个人掷出硬币时，他的内心其实早有选择\n投硬币的结果只是一个参考\n要永远记得\n听从自己的内心</text>
+      <text wx:if='{{finish}}' class="replay" bindtap='replay'>再扔一次</text>
+    </view>
+    <text class="intro button {{intro == true?'intro3':''}}" bindtap='back'>返回</text>
+  </view>
+</view>

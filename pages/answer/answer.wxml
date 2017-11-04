@@ -1,0 +1,19 @@
+<view class="container">
+  <view class='content' bindtouchstart='start' bindtouchend='end'>
+    <text wx:if='{{!finish}}' class="intro {{intro == true?'intro1':''}}">答案之书</text>
+    <view class='roll'>
+      <text wx:if='{{!finish}}' class="intro {{intro == true?'intro2':''}} {{holding == true?'fadeout':''}}">在心里默念一遍你想要知晓答案的问题\n按住屏幕三秒钟\n查看来自答案之书的指引</text>
+      <view class="suggests {{finish == true?'fadein':''}}">
+        <text>-</text>
+        <text>{{text}}</text>
+        <text>-</text>
+      </view>
+      <view class="bground {{holding == true?'hold':''}} {{finish == true?'finish':''}}">
+          <text>{{seconds}}</text>
+      </view>
+      <text wx:if='{{finish}}' class="tips">不要过分在意答案之书给出的暗示\n遇到真正棘手的问题\n还是要靠自己的努力去解决</text>
+      <text wx:if='{{finish}}' class="replay" bindtap='replay'>再试一次</text>
+    </view>
+    <text class="intro button {{intro == true?'intro3':''}}" bindtap='back'>返回</text>
+  </view>
+</view>

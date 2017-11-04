@@ -1,0 +1,26 @@
+.content {
+  width: 100%;
+  height: 800rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.content text {
+  font-size: 40rpx;
+  color: #6c4420;
+  display: block;
+  text-align: center;
+}
+.content .button {
+  font-size: 35rpx;
+  width: 150rpx;
+  color: #a1652f;
+  border-bottom: #a1652f 1rpx solid;
+}
+.content .share {
+  font-size: 30rpx;
+  position: absolute;
+  bottom: 150rpx;
+  color: #a1652f;
+}

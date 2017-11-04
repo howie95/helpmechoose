@@ -1,0 +1,134 @@
+.fadeout {
+  opacity: 0 !important;
+}
+.fadein {
+  opacity: 1 !important;
+}
+.transform {
+  animation: icontrans 1s 2s forwards;
+}
+.intro {
+  opacity: 0;
+}
+.intro1 {
+  opacity: 1;
+  transition: 1s !important;
+}
+.intro2 {
+  opacity: 1;
+  transition: 1s .5s !important;
+}
+.intro3 {
+  opacity: 1;
+  transition: 1s 1s !important;
+}
+@keyframes icontrans {
+  to{
+    transform: translateY(-170rpx) scale(0.5,0.5);
+  }
+}
+
+.content {
+  width: 100%;
+  height: 800rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.content text {
+  font-size: 40rpx;
+  color: #6c4420;
+  display: block;
+  text-align: center;
+}
+.roll {
+  width: 100%;
+  height: 500rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.roll text {
+  font-size: 30rpx;
+  color: #a1652f;
+  transition: .5s;
+}
+.suggests {
+  position: absolute;
+  top: 400rpx;
+  width: 500rpx;
+  opacity: 0;
+  transition: 1s;
+}
+.suggests text {
+  line-height: 80rpx;
+}
+.bgbars {
+  position: absolute;
+  top: 400rpx;
+  width: 100%;
+  transition: 1s;
+}
+.bgbars view {
+  position: relative;
+  width: 100%;
+  height: 80rpx;
+  margin-bottom: 10rpx;
+  background-color: #6c4420;
+}
+.bgbars .bar1 {
+  animation: left 1s backwards;
+}
+.bgbars .bar2 {
+  animation: right 1s backwards 1s;
+}
+.bgbars .bar3 {
+  animation: left 1s backwards 2s;
+}
+@keyframes left {
+  from{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1
+  }
+}
+@keyframes right {
+  from{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1
+  }
+}
+
+.roll .tips {
+  position: relative;
+  top: 300rpx;
+  animation: tips .5s 1.5s backwards;
+}
+@keyframes tips {
+  from{opacity: 0}
+  to{opacity: 1}
+}
+.roll .replay {
+  position: relative;
+  top: 150rpx;
+  width: 150rpx;
+  border-bottom: #a1652f 1rpx solid;
+  animation: tips .5s 2s backwards;
+}
+.content .button {
+  position: fixed;
+  bottom: 200rpx;
+  font-size: 35rpx;
+  width: 100rpx;
+  color: #a1652f;
+  border-bottom: #a1652f 1rpx solid;
+}

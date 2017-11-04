@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+      .cls-2 {
+        stroke: #6c4420;
+        stroke-miterlimit: 10;
+        animation: ani 3s linear;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      @keyframes ani {
+        from{stroke-dasharray: 0, 151;}
+        to{stroke-dasharray: 151, 151;}
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" width="50" height="50"/>
+  <path class="cls-2" d="M25,1A24,24,0,1,1,1,25,24,24,0,0,1,25,1"/>
+</svg>
