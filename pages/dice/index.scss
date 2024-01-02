@@ -1,0 +1,90 @@
+/* pages/dice/index.wxss */
+page {
+  background-color: #fff7eb;
+}
+.page-root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dice-table {
+  position: relative;
+  width: 750rpx;
+  height: 400rpx;
+  transition: 0.8s all;
+  margin-bottom: 100rpx;
+  .dice {
+    position: absolute;
+    top: 100rpx;
+    left: 310rpx;
+    opacity: 1;
+    transition: 0.8s all;
+    &.hide {
+      opacity: 0;
+    }
+  }
+  &.ds2 {
+    .dice {
+      transform: scale(1.2);
+    }
+  }
+  &.dc2 {
+    .d1 {
+      left: 160rpx;
+    }
+    .d2 {
+      left: 460rpx;
+    }
+  }
+  &.dc3,
+  &.dc4 {
+    height: 550rpx;
+    .d1 {
+      top: 80rpx;
+      left: 160rpx;
+    }
+    .d2 {
+      top: 80rpx;
+      left: 460rpx;
+    }
+    .d3 {
+      top: 320rpx;
+    }
+    .d4 {
+      top: 320rpx;
+    }
+  }
+  &.dc4 {
+    .d3 {
+      left: 160rpx;
+    }
+    .d4 {
+      left: 460rpx;
+    }
+  }
+}
+.action-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s all;
+  min-height: 300rpx;
+  &.disable {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .text-btn {
+    margin-bottom: 40rpx;
+    font-size: 34rpx;
+    color: #806052;
+    border-bottom: #806052 1px solid;
+    padding: 0 10rpx;
+    transition: 0.3s all;
+    &.disable {
+      opacity: 0.3;
+    }
+  }
+}

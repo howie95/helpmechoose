@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "dice-object": "./components/dice_object/index"
+  },
+  "navigationBarTitleText": "掷骰子",
+  "navigationBarTextStyle": "black",
+  "disableScroll": true,
+  "backgroundColorContent": "#fff7eb",
+  "navigationBarBackgroundColor": "#fff7eb",
+  "renderer": "webview"
+}

@@ -1,0 +1,86 @@
+/* pages/dice/components/dice_object/index.wxss */
+.dice {
+  height: 140rpx;
+  width: 140rpx;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-out;
+  &.s0 {
+    transform: translateZ(-70rpx) rotateY(675deg) rotateX(675deg);
+  }
+  &.s1 {
+    transform: translateZ(-100rpx) rotateY(720deg) rotateX(810deg);
+  }
+  &.s2 {
+    transform: translateZ(-100rpx) rotateY(1080deg) rotateX(900deg)
+      rotateZ(180deg);
+  }
+  &.s3 {
+    transform: translateZ(-100rpx) rotateY(810deg) rotateX(900deg)
+      rotateZ(180deg);
+  }
+  &.s4 {
+    transform: translateZ(-100rpx) rotateY(900deg) rotateX(900deg)
+      rotateZ(180deg);
+  }
+  &.s5 {
+    transform: translateZ(-100rpx) rotateY(990deg) rotateX(900deg)
+      rotateZ(180deg);
+  }
+  &.s6 {
+    transform: translateZ(-100rpx) rotateY(720deg) rotateX(990deg);
+  }
+  &.anim {
+    animation: diceRollin 1s infinite linear;
+    @keyframes diceRollin {
+      from {
+        transform: translateZ(-70rpx) rotateY(675deg) rotateX(675deg);
+      }
+      to {
+        transform: translateZ(-70rpx) rotateY(1035deg) rotateX(1035deg);
+      }
+    }
+  }
+  .side {
+    position: absolute;
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 10rpx;
+    line-height: 140rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4rpx;
+    box-shadow: inset 0 0 30rpx #ead1c6;
+    background: #836659;
+    .text {
+      color: #fff;
+      font-size: 52rpx;
+      font-weight: bold;
+    }
+  }
+  .one {
+    transform: rotateX(-90deg) translateZ(70rpx);
+    z-index: 1;
+  }
+  .two {
+    transform: rotateY(180deg) translateZ(70rpx);
+    z-index: 2;
+  }
+  .three {
+    transform: rotateY(90deg) translateZ(70rpx);
+    z-index: 3;
+  }
+  .four {
+    z-index: 4;
+    transform: rotateY(0deg) translateZ(70rpx);
+  }
+  .five {
+    transform: rotateY(-90deg) translateZ(70rpx);
+    z-index: 5;
+  }
+  .six {
+    transform: rotateX(90deg) translateZ(70rpx);
+    z-index: 6;
+  }
+}

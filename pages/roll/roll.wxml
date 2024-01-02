@@ -4,7 +4,7 @@
     <view class='roll'>
       <text wx:if='{{!finish}}' class="intro {{intro == true?'intro2':''}} {{holding == true?'fadeout':''}}">在心中默念你纠结的问题\n然后按住屏幕三秒钟\n我就可以给你答案</text>
       <view class="coin {{holding == true?'fadein':'fadeout'}} {{finish == true?'transform':''}}">
-        <image wx:if='{{holding}}' src='./coin.svg'></image>
+        <image wx:if='{{holding}}' src='{{thisWxs.getMathRandom()}}'></image>
         <view class="coininside {{finish == true?'fadein':''}}">
           <text class="{{finish == true?'fadein':''}}">{{result}}</text>
         </view>
@@ -15,3 +15,9 @@
     <text class="intro button {{intro == true?'intro3':''}}" bindtap='back'>返回</text>
   </view>
 </view>
+<wxs module="thisWxs">
+var getMathRandom = function () {
+    return './coin.svg?' + Math.random()
+}
+module.exports = { getMathRandom: getMathRandom }
+</wxs>

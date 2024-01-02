@@ -1,0 +1,31 @@
+<!--pages/dice/index.wxml-->
+<view class="page-root">
+  <view class="dice-table dc{{diceCount}} ds{{diceStatus}}">
+    <view class="dice d1 {{diceCount>0?'':'hide'}}">
+      <dice-object id="diceObj1"></dice-object>
+    </view>
+    <view class="dice d2 {{diceCount>1?'':'hide'}}">
+      <dice-object id="diceObj2"></dice-object>
+    </view>
+    <view class="dice d3 {{diceCount>2?'':'hide'}}">
+      <dice-object id="diceObj3"></dice-object>
+    </view>
+    <view class="dice d4 {{diceCount>3?'':'hide'}}">
+      <dice-object id="diceObj4"></dice-object>
+    </view>
+  </view>
+  <view class="action-area {{diceStatus==1?'disable':''}}">
+    <block wx:if="{{diceStatus == 0}}">
+      <text class="text-btn {{diceCount==1?'disable':''}}" catch:tap="doDiceCountMinus"
+        >减少一枚</text
+      >
+      <text class="text-btn main" catch:tap="doDiceRollin">开始掷</text>
+      <text class="text-btn {{diceCount==4?'disable':''}}" catch:tap="doDiceCountAdd"
+        >增加一枚</text
+      >
+    </block>
+    <block wx:if="{{diceStatus == 2}}">
+      <text class="text-btn main" catch:tap="resetRollin">重新投掷</text>
+    </block>
+  </view>
+</view>

@@ -1,10 +1,33 @@
-<view class="container">
-  <view class='content'>
-    <text>帮我做决定！</text>
-    <text class='button' data-link='roll' bindtap='navto'>投硬币</text>
-    <text class='button' data-link='eat' bindtap='navto'>吃什么</text>
-    <text class='button' data-link='which' bindtap='navto'>选一个</text>
-    <text class='button' data-link='answer' bindtap='navto'>答案之书</text>
-    <text class='share'>如果有帮到你，请点右上角分享给朋友哦 ;)</text>
+<view class="page-root" style="top:{{wxMenuHeight + wxMenuTop}}px;bottom:{{wxSafeBottom}}px;">
+  <text class="logo-text1">帮我做决定</text>
+  <view class="logo-text2">Help Me Decide</view>
+  <view class="main-container">
+    <view class="tool-list">
+      <view class="tool-item" data-link="/pages/roll/roll" catch:tap="navTo">
+        <text class="text">掷硬币</text>
+        <view class="line"></view>
+      </view>
+      <view class="tool-item" data-link="/pages/eat/eat" catch:tap="navTo">
+        <text class="text">吃什么</text>
+        <view class="line"></view>
+      </view>
+      <view class="tool-item" data-link="/pages/which/which" catch:tap="navTo">
+        <text class="text">选一个</text>
+        <view class="line"></view>
+      </view>
+      <view class="tool-item" data-link="/pages/dice/index" catch:tap="navTo">
+        <text class="text">掷骰子</text>
+        <view class="line"></view>
+      </view>
+      <view class="tool-item" data-link="/pages/random/random" catch:tap="navTo">
+        <text class="text">随机数</text>
+        <view class="line"></view>
+      </view>
+      <view class="tool-item" data-link="/pages/answer/answer" catch:tap="navTo">
+        <text class="text">答案之书</text>
+        <view class="line"></view>
+      </view>
+    </view>
+    <view class="ad-area"></view>
   </view>
 </view>

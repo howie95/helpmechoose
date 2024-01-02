@@ -1,0 +1,22 @@
+<!--pages/dice/components/dice_object/index.wxml-->
+<view class="dice s{{currentSide}} {{diceAnim?'anim':''}}">
+  <view class="side one">
+    <view class="dot"></view>
+    <text class="text">1</text>
+  </view>
+  <view class="side two">
+    <text class="text">2</text>
+  </view>
+  <view class="side three">
+    <text class="text">3</text>
+  </view>
+  <view class="side four">
+    <text class="text">4</text>
+  </view>
+  <view class="side five">
+    <text class="text">5</text>
+  </view>
+  <view class="side six">
+    <text class="text">6</text>
+  </view>
+</view>

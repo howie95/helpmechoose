@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "选一个",
+  "navigationBarTextStyle": "black",
+  "disableScroll": true,
+  "backgroundColorContent": "#fff7eb",
+  "navigationBarBackgroundColor": "#fff7eb",
+  "renderer": "webview"
+}

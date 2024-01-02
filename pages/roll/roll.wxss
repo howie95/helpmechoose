@@ -61,25 +61,34 @@
   height: 500rpx;
   opacity: 0;
   transition: .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .roll .coin image {
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500rpx;
+  height: 500rpx;
+}
+.roll .coin image .cls-2 {
+  stroke: red;
 }
 .roll .coin .coininside {
-  position: absolute;
-  top: 40rpx;
-  left: 50rpx;
-  width: 400rpx;
-  height: 400rpx;
-  border-radius: 200rpx;
+  width: 420rpx;
+  height: 420rpx;
+  border-radius: 210rpx;
   background-color: #6c4420;
   opacity: 0;
   transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .roll .coin .coininside text {
-  color: #fffbcf;
+  color: #fff7eb;
   font-size: 180rpx;
-  line-height: 380rpx;
   opacity: 0;
   transition: 1s 1s;
 }

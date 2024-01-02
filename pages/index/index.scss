@@ -1,0 +1,76 @@
+page {
+  background-color: #fff7eb;
+}
+.page-root {
+  position: fixed;
+  left: 0;
+  right: 0;
+  .logo-text1 {
+    display: block;
+    width: 110rpx;
+    position: absolute;
+    left: 80rpx;
+    top: 20rpx;
+    z-index: 2;
+    font-size: 110rpx;
+    color: #806052;
+    font-weight: 200;
+    line-height: 120rpx;
+  }
+  .logo-text2 {
+    display: block;
+    position: absolute;
+    left: 150rpx;
+    top: 230rpx;
+    z-index: 1;
+    width: 800rpx;
+    font-size: 86rpx;
+    color: #e6dcce;
+    font-weight: 200;
+    line-height: 100rpx;
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+  }
+  .main-container {
+    position: absolute;
+    left: 30rpx;
+    right: 30rpx;
+    bottom: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .ad-area {
+      width: 690rpx;
+      height: 220rpx;
+      border-radius: 20rpx;
+      overflow: hidden;
+      background-color: white;
+    }
+    .tool-list {
+      margin-bottom: 20rpx;
+      margin-right: 20rpx;
+      .tool-item {
+        position: relative;
+        height: 70rpx;
+        width: 192rpx;
+        margin-bottom: 30rpx;
+        .line {
+          position: absolute;
+          right: 0;
+          bottom: 8rpx;
+          display: block;
+          width: 160rpx;
+          height: 24rpx;
+          background-color: #ede4d6;
+        }
+        .text {
+          position: relative;
+          z-index: 1;
+          font-size: 44rpx;
+          color: #222;
+          line-height: 70rpx;
+        }
+      }
+    }
+  }
+}
