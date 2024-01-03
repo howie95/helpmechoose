@@ -55,7 +55,12 @@ Page({
       randomStatus: 0,
     });
   },
-  doCopyResult() {},
+  doCopyResult() {
+    const copyText = this.data.randomResult.join("\n");
+    wx.setClipboardData({
+      data: copyText,
+    });
+  },
   navToIndex() {
     wx.navigateBack();
   },

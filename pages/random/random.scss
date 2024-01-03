@@ -10,11 +10,12 @@
     top: 50%;
     transform: translateY(-50%);
     pointer-events: initial;
-    width: 52rpx;
-    height: 52rpx;
-    padding: 10rpx;
+    width: 60rpx;
+    height: 60rpx;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAAD1BMVEUAAACAYFKAYFSAYFGAYFJWRm7dAAAABHRSTlMAgEC/+QGcAgAAAFdJREFUSMft0rENgDAQQ1GTCVIwAEVGyAAc8f4zsQC6L+rcby29ytq2BvvhUNrpAMALAAcA7gUUQMAAQBMA2b7oq4+yBhHNRRTxTdxEhIgQEEs5Mbuq/70i/CrFCcmkIwAAAABJRU5ErkJggg==);
-    background-size: cover;
+    background-size: 50rpx 50rpx;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 .page-root {
