@@ -12,8 +12,7 @@ Page({
       this.setData({
         result:'YES'
       })
-    }
-    else{
+    }else{
       this.setData({
         result: 'NO'
       })

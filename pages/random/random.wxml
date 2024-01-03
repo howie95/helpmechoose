@@ -1,0 +1,163 @@
+<!--pages/random/random.wxml-->
+<view class="page-root {{randomStatus>0?'hide':''}}" wx:if="{{randomStatus!=2}}">
+  <view class="container" style="top:{{pageMarginTop}}px;">
+    <view class="title-area">
+      <text class="main-title">随机数小工具</text>
+    </view>
+    <view class="action-area">
+      <text class="num-text1">数字范围</text>
+      <view class="num-line" style="margin-bottom:20rpx;">
+        <view
+          class="btn {{thisWxs.isBtnAvaliable(randomMin,-10,'-1',randomMax)}}"
+          data-value="{{-10}}"
+          data-type="min"
+          catch:tap="doChangeRangeByStep"
+          >-10</view
+        >
+        <view
+          class="btn {{thisWxs.isBtnAvaliable(randomMin,-1,'-1',randomMax)}}"
+          data-value="{{-1}}"
+          data-type="min"
+          catch:tap="doChangeRangeByStep"
+          >-1</view
+        >
+        <input
+          class="input"
+          type="number"
+          value="{{randomMin}}"
+          data-type="min"
+          bindblur="handleInputBlur"
+        />
+        <view
+          class="btn {{thisWxs.isBtnAvaliable(randomMin,1,'-1',randomMax)}}"
+          data-value="{{1}}"
+          data-type="min"
+          catch:tap="doChangeRangeByStep"
+          >+1</view
+        >
+        <view
+          class="btn {{thisWxs.isBtnAvaliable(randomMin,10,'-1',randomMax)}}"
+          data-value="{{10}}"
+          data-type="min"
+          catch:tap="doChangeRangeByStep"
+          >+10</view
+        >
+      </view>
+      <text class="num-text1" style="text-align:center;">到</text>
+      <view class="num-line">
+        <view
+          class="btn {{thisWxs.isBtnAvaliable(randomMax,-10,randomMin,'100001')}}"
+          data-value="{{-10}}"
+          data-type="max"
+          catch:tap="doChangeRangeByStep"
+          >-10</view
+        >
+        <view
+          class="btn {{thisWxs.isBtnAvaliable(randomMax,-1,randomMin,'100001')}}"
+          data-value="{{-1}}"
+          data-type="max"
+          catch:tap="doChangeRangeByStep"
+          >-1</view
+        >
+        <input
+          class="input"
+          type="number"
+          value="{{randomMax}}"
+          data-type="max"
+          bindblur="handleInputBlur"
+        />
+        <view
+          class="btn {{thisWxs.isBtnAvaliable(randomMax,1,randomMin,'100001')}}"
+          data-value="{{1}}"
+          data-type="max"
+          catch:tap="doChangeRangeByStep"
+          >+1</view
+        >
+        <view
+          class="btn {{thisWxs.isBtnAvaliable(randomMax,10,randomMin,'100001')}}"
+          data-value="{{10}}"
+          data-type="max"
+          catch:tap="doChangeRangeByStep"
+          >+10</view
+        >
+      </view>
+      <text class="num-text1">生成个数</text>
+      <view class="num-line">
+        <view
+          class="btn {{thisWxs.isBtnAvaliable(randomCount,-1,'0','101')}}"
+          data-value="{{-1}}"
+          catch:tap="doChangeCountByStep"
+          >-1</view
+        >
+        <input
+          class="input"
+          type="number"
+          value="{{randomCount}}"
+          data-type="count"
+          bindblur="handleInputBlur"
+        />
+        <view
+          class="btn {{thisWxs.isBtnAvaliable(randomCount,1,'0','101')}}"
+          data-value="{{1}}"
+          catch:tap="doChangeCountByStep"
+          >+1</view
+        >
+      </view>
+      <text class="num-text2">tips:也可以点击数字手动输入哦</text>
+      <view class="num-line">
+        <view class="tbtn" data-value="{{true}}" catch:tap="doChangeRandomDuplicate">
+          <text class="ck {{randomDuplicate?'':'hide'}}">✓</text>
+          <text>数字可重复</text>
+        </view>
+        <view
+          class="tbtn"
+          style="margin-left:-20rpx;"
+          data-value="{{false}}"
+          catch:tap="doChangeRandomDuplicate"
+        >
+          <text class="ck {{randomDuplicate?'hide':''}}">✓</text>
+          <text>数字不可重复</text>
+        </view>
+      </view>
+    </view>
+    <view class="btn-area">
+      <text class="btn" style="margin-bottom:20rpx;" catch:tap="doGenerateRandom">生成随机数</text>
+      <text class="btn" catch:tap="navToIndex">返回</text>
+    </view>
+  </view>
+</view>
+<view class="page-root {{randomStatus<2?'hide':''}}" wx:if="{{randomStatus==2}}">
+  <view class="container" style="top:{{pageMarginTop}}px;">
+    <view class="title-area">
+      <text class="main-title">生成结果</text>
+    </view>
+    <view class="number-list" wx:if="{{randomResult.length<=10}}">
+      <view
+        class="num-item"
+        style="animation-delay:{{0.2*index+0.5}}s;"
+        wx:for="{{randomResult}}"
+        wx:key="index"
+      >
+        <text class="idx">{{index+1}}.</text>
+        <text class="num">{{item}}</text>
+      </view>
+    </view>
+    <scroll-view class="number-list" scroll-y="{{true}}" type="list" wx:else>
+      <view class="num-item" wx:for="{{randomResult}}" wx:key="index">
+        <text class="idx">{{index+1}}.</text>
+        <text class="num">{{item}}</text>
+      </view>
+    </scroll-view>
+    <view class="btn-area">
+      <text class="btn" style="margin-bottom:20rpx;" catch:tap="doCopyResult">复制全部</text>
+      <text class="btn" style="margin-bottom:40rpx;" catch:tap="doInitStep">再生成一组</text>
+      <text class="btn" catch:tap="navToIndex">返回首页</text>
+    </view>
+  </view>
+</view>
+<wxs module="thisWxs">
+  var isBtnAvaliable = function (crt,diff,min,max) {var result = ""; var crtNum = parseInt(crt);
+  crtNum = crtNum+diff; if(crtNum<=parseInt(min)){result = "disable";}
+  if(crtNum>=parseInt(max)){result = "disable";} return result; }; module.exports = { isBtnAvaliable
+  : isBtnAvaliable};
+</wxs>

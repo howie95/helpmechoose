@@ -5,7 +5,8 @@
         "pages/eat/eat",
         "pages/which/which",
         "pages/answer/answer",
-        "pages/dice/index"
+        "pages/dice/index",
+        "pages/random/random"
     ],
     "window": {
         "backgroundTextStyle": "light",

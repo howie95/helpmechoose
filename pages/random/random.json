@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "disableScroll": true,
+  "navigationBarTextStyle": "black",
+  "backgroundColorContent": "#fff7eb",
+  "renderer": "skyline",
+  "navigationStyle": "custom",
+  "componentFramework": "glass-easel"
+}
