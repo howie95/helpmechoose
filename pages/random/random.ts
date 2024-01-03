@@ -2,7 +2,8 @@
 Page({
   _inputCache: "",
   data: {
-    pageMarginTop: 0,
+    pagePaddingTop: 0,
+    menuBarHeight: 0,
     //0初始1生成中2展示结果
     randomStatus: 0,
     randomMin: "0",
@@ -125,7 +126,8 @@ Page({
   onLoad() {
     const menuRect = wx.getMenuButtonBoundingClientRect();
     this.setData({
-      pageMarginTop: menuRect.top + menuRect.height,
+      pagePaddingTop: menuRect.top,
+      menuBarHeight: menuRect.height,
     });
   },
   onShareAppMessage() {

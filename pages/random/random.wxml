@@ -1,6 +1,6 @@
 <!--pages/random/random.wxml-->
 <view class="page-root {{randomStatus>0?'hide':''}}" wx:if="{{randomStatus!=2}}">
-  <view class="container" style="top:{{pageMarginTop}}px;">
+  <view class="container" style="top:{{pagePaddingTop+menuBarHeight}}px;">
     <view class="title-area">
       <text class="main-title">随机数小工具</text>
     </view>
@@ -127,7 +127,7 @@
   </view>
 </view>
 <view class="page-root {{randomStatus<2?'hide':''}}" wx:if="{{randomStatus==2}}">
-  <view class="container" style="top:{{pageMarginTop}}px;">
+  <view class="container" style="top:{{pagePaddingTop+menuBarHeight}}px;">
     <view class="title-area">
       <text class="main-title">生成结果</text>
     </view>
@@ -154,6 +154,9 @@
       <text class="btn" catch:tap="navToIndex">返回首页</text>
     </view>
   </view>
+</view>
+<view class="page-bar" style="height:{{menuBarHeight}}px;top:{{pagePaddingTop}}px;">
+  <view class="back-btn" catch:tap="navToIndex"></view>
 </view>
 <wxs module="thisWxs">
   var isBtnAvaliable = function (crt,diff,min,max) {var result = ""; var crtNum = parseInt(crt);

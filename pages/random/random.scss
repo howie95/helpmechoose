@@ -1,4 +1,22 @@
 /* pages/random/random.wxss */
+.page-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  .back-btn {
+    position: absolute;
+    left: 30rpx;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: initial;
+    width: 52rpx;
+    height: 52rpx;
+    padding: 10rpx;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAAD1BMVEUAAACAYFKAYFSAYFGAYFJWRm7dAAAABHRSTlMAgEC/+QGcAgAAAFdJREFUSMft0rENgDAQQ1GTCVIwAEVGyAAc8f4zsQC6L+rcby29ytq2BvvhUNrpAMALAAcA7gUUQMAAQBMA2b7oq4+yBhHNRRTxTdxEhIgQEEs5Mbuq/70i/CrFCcmkIwAAAABJRU5ErkJggg==);
+    background-size: cover;
+  }
+}
 .page-root {
   position: relative;
   height: 100vh;

@@ -28,6 +28,13 @@
         <view class="line"></view>
       </view>
     </view>
-    <view class="ad-area"></view>
+    <view class="ad-area" wx:if="{{showAdArea}}">
+      <ad
+        unit-id="adunit-b2251d3884ff68b7"
+        binderror="handleAdError"
+        bindclose="handleAdClose"
+        ad-intervals="30"
+      ></ad>
+    </view>
   </view>
 </view>

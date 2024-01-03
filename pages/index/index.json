@@ -4,6 +4,5 @@
   "navigationBarTextStyle": "black",
   "disableScroll": true,
   "backgroundColorContent": "#fff7eb",
-  "renderer": "skyline",
-  "componentFramework": "glass-easel"
+  "renderer": "webview"
 }

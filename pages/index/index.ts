@@ -3,6 +3,17 @@ Page({
     wxMenuHeight: 0,
     wxMenuTop: 0,
     wxSafeBottom: 0,
+    showAdArea: true,
+  },
+  handleAdError() {
+    this.setData({
+      showAdArea: false,
+    });
+  },
+  handleAdClose() {
+    this.setData({
+      showAdArea: false,
+    });
   },
   navTo(e: WechatMiniprogram.BaseEvent) {
     let link = e.currentTarget.dataset.link;

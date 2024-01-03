@@ -41,10 +41,9 @@ page {
     align-items: flex-end;
     .ad-area {
       width: 690rpx;
-      height: 220rpx;
+      min-height: 220rpx;
       border-radius: 20rpx;
       overflow: hidden;
-      background-color: white;
     }
     .tool-list {
       margin-bottom: 20rpx;
